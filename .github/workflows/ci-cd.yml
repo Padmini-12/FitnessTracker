@@ -1,4 +1,6 @@
 name: CI/CD - Build & Push Docker Images
+uses: docker/login-action@v3   # ✅ correct
+
 
 on:
   push:
