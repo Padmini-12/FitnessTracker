@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fitness-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: fitness.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: fitness-frontend
+            port:
+              number: 80
